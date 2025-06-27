@@ -3,7 +3,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "IBM Plex Sans", sans-serif;
-  background-color: #c3c5ac;
+  background-color: #cccebc;
+}
+body svg path {
+  stroke: currentColor;
 }
 
 nav {
@@ -33,6 +36,7 @@ article {
   padding-right: 45px;
   display: flex;
   justify-content: space-between;
+  padding-top: 70px;
 }
 article .impact-section {
   gap: 15px;
@@ -60,6 +64,72 @@ article button {
 article img {
   width: 25vw;
   border-radius: 19px;
+}
+
+section {
+  width: auto;
+  height: auto;
+  padding: 60px;
+}
+section h2 {
+  color: #7C6A0A;
+  font-size: 2em;
+}
+section .healthcare, section .furtniture {
+  padding-bottom: 60px;
+}
+section .healthcare h2, section .furtniture h2 {
+  font-weight: 300;
+  padding-bottom: 60px;
+}
+section .healthcare .card-section, section .furtniture .card-section {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 220px;
+       column-gap: 220px;
+  row-gap: 80px;
+}
+section .healthcare .product-card, section .furtniture .product-card {
+  width: 14vw;
+  height: 45vh;
+  background-color: #FFDAC6;
+  color: #7C6A0A;
+  padding: 20px;
+  border-radius: 10px;
+}
+section .healthcare .product-card .icon, section .furtniture .product-card .icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+}
+section .healthcare .product-card .icon svg, section .furtniture .product-card .icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: #7C6A0A;
+  stroke-width: 2;
+}
+section .healthcare .product-card .product-image, section .furtniture .product-card .product-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .healthcare .product-card .product-image img, section .furtniture .product-card .product-image img {
+  width: 12vw;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+section .furtniture .product-card {
+  background-color: #BABD8D;
+  color: white;
 }
 
 footer {
