@@ -6,6 +6,19 @@ $quaternary-color: #FA9500;
 $font-stack: 'IBM Plex Sans', sans-serif;
 $paragraph-size: 1.5em;
 
+@mixin flexCenter ($direction,$content,$aling){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $aling;
+}
+
+@mixin buttonStyle{
+    button{
+        background: none;
+        border-style: none;
+    }
+}
 
 body {
     margin: 0;
@@ -20,8 +33,7 @@ body {
 
 nav {
     width: auto;
-    display: flex;
-    justify-content: space-between; //Agrupa los elementos de manera proporcional.
+    @include flexCenter(row,space-between,center);
     color: $primary-text-color;
     padding: 15px;
 
@@ -33,26 +45,21 @@ nav {
     .icons {
         display: flex;
         gap: 15px; //maneja espaciado entre elementos en eje Y,X
-
-        button {
-            background: none;
-            border-style: none;
-        }
+        @include buttonStyle();
     }
 }
 
 article {
+    @include flexCenter(row,space-between,center);
     width: auto;
     color: $primary-text-color;
     padding-left: 45px;
     padding-right: 45px;
-    display: flex;
-    justify-content: space-between;
+
     padding-top: 70px;
 
     .impact-section {
-        gap: 15px;
-        display: flex;
+        @include flexCenter(column,space-evenly,flex-start);
         flex-direction: column;
         padding-top: 50px;
     }
@@ -66,11 +73,11 @@ article {
     p {
         font-size: $paragraph-size;
     }
-
+    @include buttonStyle();
     button {
+        
         width: 12vw;
         background: $quaternary-color;
-        border-style: none;
         padding: 20px;
         border-radius: 35px;
         color: white;
@@ -102,11 +109,9 @@ section {
         }
 
         .card-section {
-            display: flex;
+            @include flexCenter(row,space-evenly,center);
             width: auto;
             height: auto;
-            justify-content: center;
-            align-items: center;
             flex-wrap: wrap;
             column-gap: 220px;
             row-gap: 80px;
@@ -154,6 +159,40 @@ section {
             color: white;
         }
     }
+}
+
+.about-us{
+    padding-bottom: 60px;
+    h2{
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .mision-section{
+        @include flexCenter(row,space-evenly,center);
+        .earth{
+            width: 30vw;
+            display: flex;
+            gap: 40px;
+            color: #E86424; 
+            img{
+                object-fit: contain;
+            }
+            p{
+                text-align: center;
+                font-size: $paragraph-size;
+            }
+
+        }
+
+    }
+
+    .innovation{
+        @extend .earth;
+    }
+}
+
+.infoInterprice-section{
+    padding: 1px;
 }
 
 footer {
